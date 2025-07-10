@@ -19,8 +19,13 @@ class CustomException(Exception):
     
     def __str__(self):#When the exception is converted to string (e.g., print or str()), return this
         return self.error_message# Return the formatted detailed error message
-
-if __name__=="__main__":
+    
+# if __name__=="__main__":
+#     try:
+#         a=1/0
+#     except Exception as e:
+#         logging.info("Divide by zero")
+#         raise CustomException(e,sys)
     
 
      

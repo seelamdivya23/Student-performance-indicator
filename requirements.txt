@@ -7,5 +7,6 @@ catboost
 xgboost
 scikit-learn
 joblib
-streamlit     
+streamlit
+flask     
 -e .
