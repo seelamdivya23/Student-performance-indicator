@@ -63,13 +63,6 @@ Student-performance-indicator/
 
 ---
 
-## 📊 Demo
-
-https://user-images.githubusercontent.com/your-demo-video-link.gif  
-*(Add a demo video or screenshot if available)*
-
----
-
 ## 🧠 How to Use
 
 ### 1. Clone the Repo
@@ -91,6 +84,19 @@ pip install -r requirements.txt
 ```
 python app.py
 ```
+# 📊 Results
+ ## Best Accuracy: ~88% 
+
+ # 🙋‍♀️ Author
+ Divya Seelam <br>
+📧 Email: divyaseelam83@gmail.com
+# 🌟 Acknowledgements
+## Dataset
+The dataset used in this project is [Student Performance Dataset](https://www.kaggle.com/datasets/spscientist/students-performance-in-exams) from Kaggle.
+
+
+Scikit-learn & Flask Documentation
+## ⭐️ Don't forget to star the repo if you find it useful!
 
 
 
