@@ -1,0 +1,15 @@
+[ 2025-07-21 21:21:42,794 ] 45 root - INFO - Entered the data ingestion method/component
+[ 2025-07-21 21:21:42,799 ] 52 root - INFO - Read the dataset as dataframe
+[ 2025-07-21 21:21:42,804 ] 61 root - INFO - Train-test split initiated
+[ 2025-07-21 21:21:42,809 ] 73 root - INFO - Ingestion of the data is completed
+[ 2025-07-21 21:21:42,842 ] 93 root - INFO - Read train and test data completed
+[ 2025-07-21 21:21:43,926 ] 117 root - INFO - Saved visualization plot to artifacts folder
+[ 2025-07-21 21:21:44,283 ] 150 root - INFO - Saved gender distribution plots (countplot + pie chart).
+[ 2025-07-21 21:21:44,686 ] 176 root - INFO - Saved violin plots for score distributions.
+[ 2025-07-21 21:21:44,686 ] 179 root - INFO - Obtaining preprocessing object
+[ 2025-07-21 21:21:44,696 ] 70 root - INFO - Categorical columns: ['gender', 'race_ethnicity', 'parental_level_of_education', 'lunch', 'test_preparation_course']
+[ 2025-07-21 21:21:44,696 ] 71 root - INFO - Numerical columns: ['writing_score', 'reading_score']
+[ 2025-07-21 21:21:44,697 ] 194 root - INFO - Applying preprocessing object on training and testing dataframes.
+[ 2025-07-21 21:21:44,714 ] 206 root - INFO - Saved preprocessing object.
+[ 2025-07-21 21:21:44,716 ] 33 root - INFO - Split training and test input data
+[ 2025-07-21 21:23:34,114 ] 102 root - INFO - Best found model on both training and testing dataset
