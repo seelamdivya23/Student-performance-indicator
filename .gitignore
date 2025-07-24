@@ -205,3 +205,27 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+# === Project-specific ignores ===
+
+# PyCharm/VSCode
+.idea/
+
+# CatBoost training logs and metadata
+src/components/catboost_info/
+*.tfevents
+*.json
+*.tsv
+
+# Auto-generated plots and visualizations
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.gif
+
+# Model artifacts and outputs
+src/components/artifacts/
+
+# Temporary notebooks or output
+*.ipynb_checkpoints
+

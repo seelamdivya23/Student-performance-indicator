@@ -92,6 +92,89 @@ class DataTransformation:
 
             logging.info("Read train and test data completed")
 
+            # 🔽 New Code Block: Save Visualization
+            import matplotlib.pyplot as plt
+            import seaborn as sns
+
+            os.makedirs("artifacts", exist_ok=True)  # ensure artifacts directory exists
+
+            plt.figure(figsize=(12, 6))
+
+            # Plot total score distribution in train set
+            plt.subplot(121)
+            sns.histplot(data=train_df, x='reading_score', bins=30, kde=True, color='green')
+            plt.title("Reading Score Distribution")
+
+            plt.subplot(122)
+            sns.histplot(data=train_df, x='reading_score', kde=True, hue='gender')
+            plt.title("Reading Score by Gender")
+
+            # Save the plot to artifacts folder
+            plt.tight_layout()
+            plt.savefig("artifacts/reading_score_distribution.png")
+            plt.close()
+
+            logging.info("Saved visualization plot to artifacts folder")
+
+
+            # 🔽 Gender Distribution Plot (Countplot + Pie Chart)
+
+            os.makedirs("artifacts", exist_ok=True)  # ensure 'artifacts' folder exists
+
+            f, ax = plt.subplots(1, 2, figsize=(20, 10))
+
+            # Countplot for gender
+            sns.countplot(x='gender', data=train_df, palette='bright', ax=ax[0], saturation=0.95)
+            for container in ax[0].containers:
+                ax[0].bar_label(container, color='black', size=20)
+            ax[0].set_title("Gender Countplot", fontsize=16)
+
+            # Pie chart for gender
+            gender_counts = train_df['gender'].value_counts()
+            plt.sca(ax[1])
+            plt.pie(
+                x=gender_counts,
+                labels=gender_counts.index,
+                explode=[0, 0.1],
+                autopct='%1.1f%%',
+                shadow=True,
+                colors=['#ff4d4d', '#ff8000']
+            )
+            ax[1].set_title("Gender Distribution Pie Chart", fontsize=16)
+
+            # Save the plot
+            plt.tight_layout()
+            plt.savefig("artifacts/gender_distribution_plot.png")
+            plt.close()
+
+            logging.info("Saved gender distribution plots (countplot + pie chart).")
+
+
+            # 🔽 Violin Plot Code
+
+            os.makedirs("artifacts", exist_ok=True)  # ensure 'artifacts' folder exists
+
+            plt.figure(figsize=(18, 8))
+
+            plt.subplot(1, 3, 1)
+            plt.title('math_score')
+            sns.violinplot(y='math_score', data=train_df, color='red', linewidth=2)
+
+            plt.subplot(1, 3, 2)
+            plt.title('reading_score')
+            sns.violinplot(y='reading_score', data=train_df, color='green', linewidth=2)
+
+            plt.subplot(1, 3, 3)
+            plt.title('writing_score')
+            sns.violinplot(y='writing_score', data=train_df, color='blue', linewidth=2)
+
+            # Save the plot
+            plt.tight_layout()
+            plt.savefig("artifacts/score_violin_plots.png")
+            plt.close()
+
+            logging.info("Saved violin plots for score distributions.")
+
             # Get the preprocessor object (ColumnTransformer)
             logging.info("Obtaining preprocessing object")
             preprocessing_obj = self.get_data_transformer_object()
